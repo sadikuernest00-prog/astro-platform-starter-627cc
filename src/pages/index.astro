@@ -4,14 +4,36 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
-At AmicBridge, we unlock investment insights that lead to real opportunity.
-We don’t ask for your money — we show you where it can multiply.
+At **AmicBridge**, we provide investors with verified information that turns uncertainty into opportunity.  
+We don’t manage your investments — we help you see where capital is flowing, before the market catches up.
 
-Whether you’re investing in Crypto, real estate, or digital assets, AmicBridge helps you understand where capital is moving.
+Our insights focus on **crypto assets**, **real estate**, and **emerging opportunities** — so you can make faster, more confident, and data-backed decisions.
+
+AmicBridge gives you access to knowledge that creates real advantage — helping you identify where potential growth and high-yield assets are taking shape.  
+Join AmicBridge and gain access to insights others won’t see until it’s too late.
+`;
 ---
 
 <Layout title="Welcome to AmicBridge">
-  <ContextAlert class="mb-8" />
-  <h1 class="mb-10">AmicBridge</h1>
-  <Markdown content={explainer} class="mb-10 text-lg" />
+  <ContextAlert class="mb-10" />
+
+  <section class="text-center my-16">
+    <h1 class="text-4xl font-bold mb-6">Welcome to AmicBridge</h1>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+      We empower investors with trusted, early insights on high-return opportunities in crypto, real estate, and global markets.
+    </p>
+  </section>
+
+  <section class="my-12 max-w-3xl mx-auto">
+    <Markdown content={explainer} class="prose prose-invert text-lg leading-relaxed" />
+  </section>
+
+  <section class="text-center my-16">
+    <a
+      href="/membership"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition"
+    >
+      Get Premium Access
+    </a>
+  </section>
 </Layout>
