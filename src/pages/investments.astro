@@ -3,61 +3,56 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Investment Opportunities - AmicBridge">
-  <section style="text-align:center; padding: 4rem 1rem;">
-    <h1 style="font-size:2.5rem; font-weight:700;">Investment Opportunities</h1>
-    <p style="max-width:700px; margin:1rem auto; font-size:1.1rem;">
-      Welcome to the members-only investment page of <strong>AmicBridge</strong>.
-      Access verified insights into <strong>crypto assets</strong>, <strong>real estate</strong>,
-      and <strong>emerging markets</strong> — carefully analyzed for their potential to grow your wealth.
+  <script is:inline>
+    // This ensures the code only runs in the browser
+    if (typeof window !== 'undefined') {
+      const member = JSON.parse(localStorage.getItem('member'));
+
+      // If no member found, redirect to the membership page
+      if (!member || !member.isActive) {
+        window.location.href = '/membership';
+      }
+    }
+  </script>
+
+  <section style="padding: 3rem 1rem; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">
+      Investment Opportunities
+    </h1>
+    <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
+      Welcome to your private investment dashboard, exclusive to AmicBridge members.
+      Here you’ll find high-value data and analysis for cryptocurrency and real estate assets,
+      carefully reviewed for potential growth and ROI.
     </p>
 
-    <div id="private-content" style="display:none; margin-top:2rem;">
-      <h2 style="font-size:1.8rem; font-weight:600;">What You’ll Find:</h2>
-      <ul style="list-style:none; padding:0; margin:1.5rem auto; text-align:left; max-width:600px;">
-        <li>📊 Projected ROI scores for high-potential crypto assets</li>
-        <li>🏠 Apartment investments with reliable yield expectations</li>
-        <li>💡 Market data visualizations and expert analysis</li>
-        <li>🔒 Exclusive early-access investment reports</li>
-      </ul>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;">
+      <!-- Crypto Investment Example -->
+      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">Bitcoin (BTC)</h2>
+        <p>Projected ROI: <strong>12.5% / 6 months</strong></p>
+        <p>Risk Level: <strong>Moderate</strong></p>
+        <p>Market Insight: Institutions are showing increased accumulation at $60k range.</p>
+      </div>
 
-      <h3 style="margin-top:2rem;">Latest Insider Insights:</h3>
-      <p>✅ Bitcoin rebound expected — 78% likelihood of positive Q1 2026.</p>
-      <p>✅ Oslo micro-apartment project projected ROI: 14.5% annual yield.</p>
-      <p>✅ AI-focused ETF trend suggests 12% short-term growth potential.</p>
+      <!-- Apartment Investment Example -->
+      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">Lisbon Apartments</h2>
+        <p>Projected ROI: <strong>18% / year</strong></p>
+        <p>Risk Level: <strong>Low</strong></p>
+        <p>Insight: Property values in key districts rising due to expat demand and tourism.</p>
+      </div>
+
+      <!-- Another Asset Example -->
+      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">AI Growth Fund</h2>
+        <p>Projected ROI: <strong>25% / year</strong></p>
+        <p>Risk Level: <strong>High</strong></p>
+        <p>Insight: AI and automation startups are outperforming market expectations.</p>
+      </div>
     </div>
 
-    <div id="login-message" style="margin-top:2rem;">
-      <p style="font-size:1.2rem;">
-        🚫 Access restricted. Please log in or become a member to view insights.
-      </p>
-      <button 
-        id="login-btn" 
-        style="background:#0070f3; color:white; padding:0.7rem 1.5rem; border:none; border-radius:6px; cursor:pointer;">
-        Log In / Sign Up
-      </button>
-    </div>
+    <p style="margin-top: 3rem; font-size: 1rem; opacity: 0.8;">
+      📊 This page updates weekly for members. Stay informed. Stay ahead.
+    </p>
   </section>
-
-  <script>
-    // Wait for Netlify Identity to load
-    document.addEventListener("DOMContentLoaded", () => {
-      const loginBtn = document.getElementById("login-btn");
-      const loginMessage = document.getElementById("login-message");
-      const privateContent = document.getElementById("private-content");
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (user) {
-            loginMessage.style.display = "none";
-            privateContent.style.display = "block";
-          } else {
-            loginBtn.addEventListener("click", () => {
-              window.netlifyIdentity.open();
-            });
-          }
-        });
-        window.netlifyIdentity.init();
-      }
-    });
-  </script>
 </Layout>
