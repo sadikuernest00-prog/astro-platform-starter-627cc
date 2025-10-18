@@ -1,58 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Investment Opportunities - AmicBridge">
-  <script is:inline>
-    // This ensures the code only runs in the browser
-    if (typeof window !== 'undefined') {
-      const member = JSON.parse(localStorage.getItem('member'));
-
-      // If no member found, redirect to the membership page
-      if (!member || !member.isActive) {
-        window.location.href = '/membership';
-      }
-    }
-  </script>
-
-  <section style="padding: 3rem 1rem; text-align: center;">
-    <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">
-      Investment Opportunities
-    </h1>
-    <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-      Welcome to your private investment dashboard, exclusive to AmicBridge members.
-      Here you’ll find high-value data and analysis for cryptocurrency and real estate assets,
-      carefully reviewed for potential growth and ROI.
+<Layout title="Investment Opportunities">
+  <section class="text-center py-16">
+    <h1 class="text-4xl font-bold mb-6 text-white">Investment Opportunities</h1>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+      Welcome to <strong>AmicBridge's Premium Insights</strong>. Our members gain access to
+      verified investment analysis across <strong>crypto</strong>, <strong>real estate</strong>,
+      and <strong>emerging assets</strong> — all curated to identify opportunities with
+      the highest growth potential.
     </p>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;">
-      <!-- Crypto Investment Example -->
-      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">Bitcoin (BTC)</h2>
-        <p>Projected ROI: <strong>12.5% / 6 months</strong></p>
-        <p>Risk Level: <strong>Moderate</strong></p>
-        <p>Market Insight: Institutions are showing increased accumulation at $60k range.</p>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-semibold text-white mb-2">Crypto Insights</h2>
+        <p class="text-gray-300 mb-4">
+          Receive market-verified projections for trending coins, blockchain projects,
+          and DeFi opportunities. Each analysis includes expected ROI potential and risk level.
+        </p>
+        <ul class="text-left text-gray-400 list-disc list-inside">
+          <li>📊 ROI probability scores</li>
+          <li>🪙 Top 10 undervalued crypto assets</li>
+          <li>⚡ Real-time project risk index</li>
+        </ul>
       </div>
 
-      <!-- Apartment Investment Example -->
-      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">Lisbon Apartments</h2>
-        <p>Projected ROI: <strong>18% / year</strong></p>
-        <p>Risk Level: <strong>Low</strong></p>
-        <p>Insight: Property values in key districts rising due to expat demand and tourism.</p>
-      </div>
-
-      <!-- Another Asset Example -->
-      <div style="background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        <h2 style="font-size: 1.3rem; font-weight: bold; color: #38bdf8;">AI Growth Fund</h2>
-        <p>Projected ROI: <strong>25% / year</strong></p>
-        <p>Risk Level: <strong>High</strong></p>
-        <p>Insight: AI and automation startups are outperforming market expectations.</p>
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-semibold text-white mb-2">Real Estate Insights</h2>
+        <p class="text-gray-300 mb-4">
+          Explore early-stage apartment investments, rental yield forecasts, and
+          urban growth trends that can multiply your portfolio's value.
+        </p>
+        <ul class="text-left text-gray-400 list-disc list-inside">
+          <li>🏠 City-by-city investment heatmaps</li>
+          <li>💰 Monthly yield and cashflow projections</li>
+          <li>📈 Long-term value growth indicators</li>
+        </ul>
       </div>
     </div>
 
-    <p style="margin-top: 3rem; font-size: 1rem; opacity: 0.8;">
-      📊 This page updates weekly for members. Stay informed. Stay ahead.
+    <p class="text-gray-400 mt-10">
+      🔒 This information is available only to active members.
     </p>
+    <a href="/membership" class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-md transition">
+      Become a Member
+    </a>
   </section>
 </Layout>
