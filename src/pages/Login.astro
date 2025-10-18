@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Simple demo passwords for members (replace with real ones)
+const members = [
+  { name: 'Robert', password: 'invest123' },
+  { name: 'Elena', password: 'crypto2025' },
+];
+---
+
+<Layout title="Member Login – AmicBridge">
+  <section style="padding: 4rem 1rem; text-align: center; max-width: 600px; margin: 0 auto;">
+    <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem;">
+      Member Login
+    </h1>
+    <p style="margin-bottom: 2rem; color: #555;">
+      Enter your access code to view the Investment Opportunities.
+    </p>
+
+    <form id="loginForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your access code"
+        required
+        style="padding: 0.8rem; width: 100%; max-width: 300px; border-radius: 6px; border: 1px solid #ccc;"
+      />
+      <button
+        type="submit"
+        style="padding: 0.8rem 2rem; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer;"
+      >
+        Log In
+      </button>
+    </form>
+
+    <p id="error" style="color: red; margin-top: 1rem; display: none;">Invalid code. Try again.</p>
+
+    <script>
+      const members = ${JSON.stringify(members)};
+      const form = document.getElementById('loginForm');
+      const error = document.getElementById('error');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const password = document.getElementById('password').value.trim();
+        const found = members.find((m) => m.password === password);
+
+        if (found) {
+          localStorage.setItem('member', JSON.stringify(found));
+          window.location.href = '/investments';
+        } else {
+          error.style.display = 'block';
+        }
+      });
+    </script>
+  </section>
+</Layout>
