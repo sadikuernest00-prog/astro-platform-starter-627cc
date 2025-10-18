@@ -1,27 +1,23 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
-  { linkText: 'Home', href: '/' },
-  { linkText: 'About Us', href: '/about' },
-  { linkText: 'Membership', href: '/membership' },
-  { linkText: 'Investments', href: '/investments' },
-  { linkText: 'Contact Info', href: '/contact-info' }
+  { text: 'Home', href: '/' },
+  { text: 'About us', href: '/about' },
+  { text: 'Image CDN', href: '/image-cdn' },
+  { text: 'Membership', href: '/membership' },
+  { text: 'Investments', href: '/investments' },
+  { text: 'Contact', href: '/contact-info' },
 ];
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-  <a href="/">
-    <Logo />
-  </a>
-
-  <ul class="flex flex-wrap gap-6 text-lg font-medium ml-auto">
-    {navItems.map(item => (
-      <li>
-        <a href={item.href} class="hover:underline">
-          {item.linkText}
-        </a>
-      </li>
-    ))}
-  </ul>
-</nav>
+<header class="py-6">
+  <div class="flex items-center justify-between">
+    <a href="/" class="text-2xl font-semibold">AmicBridge.com</a>
+    <nav>
+      <ul class="flex gap-6">
+        {navItems.map((item) => (
+          <li><a href={item.href} class="hover:underline">{item.text}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
