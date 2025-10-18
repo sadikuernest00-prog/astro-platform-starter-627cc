@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/investments/*"
+    [headers.values]
+      Basic-Auth = "amicbridge:bridge2025"
