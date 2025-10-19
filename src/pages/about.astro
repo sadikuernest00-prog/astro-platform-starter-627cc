@@ -1,0 +1,176 @@
+---
+import Header from "../components/Header.astro";
+
+const values = [
+  {
+    title: "Trust",
+    description:
+      "Every connection on AmicBridge is built on verified identities, transparent agreements, and protected data. Trust is not assumed — it’s earned through accountability.",
+    icon: "🛡️",
+  },
+  {
+    title: "Transparency",
+    description:
+      "We believe clarity creates confidence. Our terms, fees, and processes are always visible, simple, and fair — so both sides know exactly what to expect.",
+    icon: "🔍",
+  },
+  {
+    title: "Connection",
+    description:
+      "AmicBridge exists to bring people together — lenders, borrowers, and communities — through cooperation and shared purpose.",
+    icon: "🌉",
+  },
+];
+---
+
+<Header />
+
+<main class="about">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About <span class="brand">AmicBridge</span></h1>
+      <p>
+        AmicBridge connects people who have something to give with those who
+        truly need it. We’re not a bank or a middleman chasing profit — we’re
+        the bridge between generosity and opportunity.
+      </p>
+    </div>
+    <img
+      src="/bridge.jpg"
+      alt="AmicBridge concept - people connected by trust"
+      class="hero-img"
+    />
+  </section>
+
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <p>
+      In every community, someone is searching for a way forward — a loan, a
+      tool, or a helping hand — and someone else has the means to offer it.
+      AmicBridge makes that connection safe, fair, and simple. We use clear
+      agreements, encrypted systems, and human-centered design to make modern
+      finance feel personal again.
+    </p>
+  </section>
+
+  <section class="values">
+    <h2>Our Core Values</h2>
+    <div class="value-grid">
+      {values.map((value) => (
+        <div class="value-card">
+          <div class="icon">{value.icon}</div>
+          <h3>{value.title}</h3>
+          <p>{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="vision">
+    <h2>Our Vision</h2>
+    <p>
+      We don’t believe in barriers — we believe in bridges. AmicBridge is more
+      than a platform; it’s a community built on fairness and connection. As we
+      grow, we aim to expand access to ethical lending and borrowing worldwide,
+      creating opportunities where trust becomes currency.
+    </p>
+  </section>
+</main>
+
+<style>
+  .about {
+    font-family: system-ui, sans-serif;
+    color: #111;
+    line-height: 1.6;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: linear-gradient(90deg, #0b132b, #1c2541);
+    color: #fff;
+    padding: 4rem 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .brand {
+    color: #00b4d8;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
+  .hero-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .mission,
+  .values,
+  .vision {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .mission h2,
+  .values h2,
+  .vision h2 {
+    color: #0b132b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .mission p,
+  .vision p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .value-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-img {
+      margin-top: 2rem;
+    }
+  }
+</style>
