@@ -1,21 +1,25 @@
 ---
-const navItems = [
-  { text: 'Home', href: '/' },
-  { text: 'lend href: '/lend' },
-  { text: 'Image', href: '/image' },
-  { text: 'Membership', href: '/membership' },
-  { text: 'Investments', href: '/investments' },
-  { text: 'Contact', href: '/contact-info' },
+import { Astro } from 'astro';
+
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Lend', href: '/lend' },
+  { name: 'Borrow', href: '/borrow' },
+  { name: 'Apply', href: '/apply' },
 ];
 ---
 
-<header class="py-6">
-  <div class="flex items-center justify-between">
-    <a href="/" class="text-2xl font-semibold">AmicBridge.com</a>
+<header class="bg-gray-900 text-white py-5 shadow-lg">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+    <a href="/" class="text-2xl font-bold tracking-tight text-blue-400 hover:text-blue-300 transition">
+      AmicBridge
+    </a>
     <nav>
-      <ul class="flex gap-6">
-        {navItems.map((item) => (
-          <li><a href={item.href} class="hover:underline">{item.text}</a></li>
+      <ul class="flex gap-8">
+        {navLinks.map(link => (
+          <li>
+            <a href={link.href} class="hover:text-blue-400 transition">{link.name}</a>
+          </li>
         ))}
       </ul>
     </nav>
