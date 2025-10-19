@@ -4,23 +4,27 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
-At **AmicBridge**, we provide investors with verified information that turns uncertainty into opportunity.  
-We don’t manage your investments — we help you see where capital is flowing, before the market catches up.
+At **AmicBridge**, we believe in connecting people through trust and opportunity.
 
-Our insights focus on **crypto assets**, **real estate**, and **emerging opportunities** — so you can make faster, more confident, and data-backed decisions.
+We’re building a safe, transparent lending platform — where individuals can lend or borrow money directly, backed by security and verified agreements.
 
-AmicBridge gives you access to knowledge that creates real advantage — helping you identify where potential growth and high-yield assets are taking shape.  
-Join AmicBridge and gain access to insights others won’t see until it’s too late.
+Lenders earn steady returns on verified loans.  
+Borrowers gain fast, fair access to funding without the weight of traditional banking.
+
+Every transaction is built on **trust**, **clarity**, and **control** — with AmicBridge acting as the secure bridge between both sides.
+
+Join us as we reshape personal finance, one connection at a time.
 `;
 ---
 
-<Layout title="Welcome to AmicBridge">
+<Layout title="AmicBridge — Lending with Trust">
   <ContextAlert class="mb-10" />
 
   <section class="text-center my-16">
-    <h1 class="text-4xl font-bold mb-6">Welcome to AmicBridge</h1>
-    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-      We empower investors with trusted, early insights on high-return opportunities in crypto, real estate, and global markets.
+    <h1 class="text-5xl font-bold mb-6 text-white">Lending Made Simple, Safe, and Human</h1>
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+      AmicBridge connects verified borrowers and trustworthy lenders through a secure digital bridge.
+      Earn returns, help others, and build financial trust that lasts.
     </p>
   </section>
 
@@ -28,12 +32,32 @@ Join AmicBridge and gain access to insights others won’t see until it’s too 
     <Markdown content={explainer} class="prose prose-invert text-lg leading-relaxed" />
   </section>
 
-  <section class="text-center my-16">
+  <section class="grid md:grid-cols-2 gap-8 my-16 max-w-5xl mx-auto">
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4 text-white">For Lenders</h2>
+      <ul class="text-gray-300 space-y-3">
+        <li>💸 Earn reliable monthly interest on verified loans</li>
+        <li>🔒 Transparent agreements and repayment tracking</li>
+        <li>📈 Diversify your income through person-to-person lending</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4 text-white">For Borrowers</h2>
+      <ul class="text-gray-300 space-y-3">
+        <li>⚡ Fast access to fair funding</li>
+        <li>🤝 Connect directly with real lenders who believe in you</li>
+        <li>🧾 Clear repayment terms and no hidden fees</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="text-center my-20">
     <a
       href="/membership"
-      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-10 rounded-xl transition"
     >
-      Get Premium Access
+      Join the Platform
     </a>
   </section>
 </Layout>
