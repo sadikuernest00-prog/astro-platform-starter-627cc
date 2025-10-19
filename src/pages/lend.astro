@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lenderInfo = `
+At **AmicBridge**, lending is personal and secure.
+
+We vet every borrower to ensure accountability and reliability. You stay in control — choose who to lend to, view verified profiles, and monitor repayments in real time.
+
+We make lending as transparent as possible — you can see loan durations, interest rates, and borrower trust scores before committing.
+
+Earn **8–12% annual returns** while helping real people build their futures.
+`;
+---
+
+<Layout title="Lend Safely | AmicBridge">
+  <section class="text-center my-16">
+    <h1 class="text-5xl font-bold mb-4 text-white">Become a Lender</h1>
+    <p class="text-gray-300 max-w-2xl mx-auto">
+      Help others achieve their goals — and earn steady, secure returns along the way.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto my-12 text-gray-200 leading-relaxed text-lg">
+    <p>{lenderInfo}</p>
+  </section>
+
+  <section class="text-center my-20">
+    <a
+      href="/apply?type=lender"
+      class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-10 rounded-xl transition"
+    >
+      Start Lending
+    </a>
+  </section>
+</Layout>
