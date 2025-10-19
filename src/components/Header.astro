@@ -1,57 +1,154 @@
 ---
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About Us", href: "/about" },
+  { name: "Lending", href: "/lending" },
+  { name: "Borrowing", href: "/borrowing" },
+  { name: "Payment", href: "/payment" },
   { name: "Contact", href: "/contact" },
 ];
 ---
 
 <header class="header">
   <nav class="nav">
-    <h1 class="logo">MySite</h1>
+    <div class="logo">
+      <img src="/logo.svg" alt="FinLink Logo" class="logo-img" />
+      <span>FinLink</span>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
     <ul class="nav-links">
       {navLinks.map(link => (
         <li>
           <a href={link.href}>{link.name}</a>
         </li>
       ))}
+      <li>
+        <a href="/payment" class="pay-btn">Pay Now</a>
+      </li>
     </ul>
   </nav>
 </header>
 
 <style>
   .header {
-    background: #111;
+    background: linear-gradient(90deg, #0b132b, #1c2541);
     color: #fff;
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   }
 
   .nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-img {
+    height: 36px;
+    width: 36px;
   }
 
   .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1.5rem;
     margin: 0;
     padding: 0;
   }
 
   .nav-links a {
-    color: #fff;
+    color: #e4e4e4;
     text-decoration: none;
-    transition: color 0.2s;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.15s ease;
   }
 
   .nav-links a:hover {
-    color: #1e90ff;
+    color: #00b4d8;
+    transform: translateY(-1px);
+  }
+
+  .pay-btn {
+    background-color: #00b4d8;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .pay-btn:hover {
+    background-color: #0090b8;
+    transform: scale(1.03);
+  }
+
+  /* Mobile styles */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      background: #1c2541;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      padding: 1.5rem 2rem;
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .pay-btn {
+      align-self: stretch;
+      text-align: center;
+    }
   }
 </style>
+
+<script>
+  // Mobile menu toggle logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const links = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("show");
+    });
+  });
+</script>
