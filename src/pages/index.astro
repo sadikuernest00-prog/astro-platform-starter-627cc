@@ -1,63 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-At **AmicBridge**, we believe in connecting people through trust and opportunity.
-
-We’re building a safe, transparent lending platform — where individuals can lend or borrow money directly, backed by security and verified agreements.
-
-Lenders earn steady returns on verified loans.  
-Borrowers gain fast, fair access to funding without the weight of traditional banking.
-
-Every transaction is built on **trust**, **clarity**, and **control** — with AmicBridge acting as the secure bridge between both sides.
-
-Join us as we reshape personal finance, one connection at a time.
-`;
 ---
 
-<Layout title="AmicBridge — Lending with Trust">
-  <ContextAlert class="mb-10" />
-
-  <section class="text-center my-16">
-    <h1 class="text-5xl font-bold mb-6 text-white">Lending Made Simple, Safe, and Human</h1>
-    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-      AmicBridge connects verified borrowers and trustworthy lenders through a secure digital bridge.
-      Earn returns, help others, and build financial trust that lasts.
+<Layout title="AmicBridge – Connect with Trusted Investors and Borrowers">
+  <section class="text-center py-20 bg-gradient-to-b from-blue-950 to-blue-900 text-white">
+    <h1 class="text-5xl font-bold mb-6">Connecting People with Opportunity</h1>
+    <p class="max-w-3xl mx-auto text-lg text-gray-300 mb-10">
+      AmicBridge is a private network where verified members connect directly to trusted lenders, borrowers, and investors. 
+      We don’t lend or handle money — we build bridges between people who do.
     </p>
-  </section>
 
-  <section class="my-12 max-w-3xl mx-auto">
-    <Markdown content={explainer} class="prose prose-invert text-lg leading-relaxed" />
-  </section>
-
-  <section class="grid md:grid-cols-2 gap-8 my-16 max-w-5xl mx-auto">
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
-      <h2 class="text-2xl font-semibold mb-4 text-white">For Lenders</h2>
-      <ul class="text-gray-300 space-y-3">
-        <li>💸 Earn reliable monthly interest on verified loans</li>
-        <li>🔒 Transparent agreements and repayment tracking</li>
-        <li>📈 Diversify your income through person-to-person lending</li>
-      </ul>
-    </div>
-
-    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
-      <h2 class="text-2xl font-semibold mb-4 text-white">For Borrowers</h2>
-      <ul class="text-gray-300 space-y-3">
-        <li>⚡ Fast access to fair funding</li>
-        <li>🤝 Connect directly with real lenders who believe in you</li>
-        <li>🧾 Clear repayment terms and no hidden fees</li>
-      </ul>
+    <div class="bg-slate-800 inline-block px-10 py-6 rounded-2xl shadow-xl">
+      <h2 class="text-2xl font-semibold mb-2 text-blue-400">Membership Access Fee</h2>
+      <p class="text-xl font-bold mb-4">$100 (one-time)</p>
+      <p class="text-gray-300 mb-6">
+        Gain instant access to our private contact network — verified, safe, and ready for collaboration.
+      </p>
+      <a href="https://wa.me/4791234567" target="_blank" 
+         class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition">
+         💬 Message Us on WhatsApp to Join
+      </a>
+      <p class="text-gray-400 mt-4 text-sm">
+        After payment verification, you’ll receive your private access link.
+      </p>
     </div>
   </section>
 
-  <section class="text-center my-20">
-    <a
-      href="/membership"
-      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-10 rounded-xl transition"
-    >
-      Join the Platform
+  <section class="max-w-4xl mx-auto py-20 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">What You Get</h2>
+    <ul class="text-gray-300 space-y-4 text-lg">
+      <li>🤝 Direct introductions to verified lenders and borrowers</li>
+      <li>🔐 A secure and private environment for money partnerships</li>
+      <li>📈 Exclusive access to people ready to make deals now</li>
+      <li>🧠 Guidance from AmicBridge to help both sides connect safely</li>
+    </ul>
+  </section>
+
+  <section class="text-center py-16 bg-slate-800">
+    <h3 class="text-2xl font-semibold text-white mb-4">Simple, Safe, and Private</h3>
+    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+      Once you’re inside the AmicBridge Network, you’ll receive direct contacts with people ready to lend, borrow, or invest — no banks, no waiting.
+    </p>
+    <a href="https://wa.me/4791234567" target="_blank" 
+       class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition">
+       💬 Join the Network
     </a>
   </section>
 </Layout>
