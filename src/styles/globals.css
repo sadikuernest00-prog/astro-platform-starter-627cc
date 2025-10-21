@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional custom styles */
 body {
   font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+  background-color: #0f172a;
+  margin: 0;
+  padding: 0;
 }
