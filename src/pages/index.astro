@@ -1,62 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SafeAIImageSite from "../components/SafeAIImageSite.tsx";
 ---
 
-<Layout title="AmicBridge – Connect with Trusted Lenders and Borrowers">
-  <section class="text-center py-24 bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 text-white">
-    <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-        Building <span class="text-blue-400">Trust</span> Between People, Not Institutions
-      </h1>
-
-      <p class="text-lg text-gray-300 leading-relaxed mb-12">
-        AmicBridge is a private community where verified members connect directly —
-        lenders, borrowers, and investors working together safely and transparently.
-        We don’t handle money — we build verified bridges between people who do.
-      </p>
-
-      <div class="bg-slate-800/70 backdrop-blur-sm inline-block px-10 py-8 rounded-2xl shadow-2xl border border-slate-700">
-        <h2 class="text-2xl font-semibold text-blue-300 mb-2">Private Membership Access</h2>
-        <p class="text-xl font-bold mb-4">$100 <span class="text-sm font-normal text-gray-400">(one-time access fee)</span></p>
-        <p class="text-gray-300 mb-6 max-w-md mx-auto">
-          Membership gives you verified access to our private contact network — where trusted
-          lenders and borrowers meet directly, with safety and confidentiality ensured.
-        </p>
-
-        <a
-          href="https://wa.me/4792928373?text=Hi%20AmicBridge%2C%20I%27d%20like%20to%20join%20the%20network%20and%20verify%20my%20payment."
-          target="_blank"
-          class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition transform hover:scale-105 shadow-md hover:shadow-lg"
-        >
-          💬 Contact Us on WhatsApp to Join
-        </a>
-
-        <p class="text-gray-400 mt-4 text-sm italic">
-          After manual payment verification, you’ll receive your secure private access link.
-        </p>
-      </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Safe AI Image Playground</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: #f8fafc;
+        color: #111;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <SafeAIImageSite client:load />
     </div>
-  </section>
-
-  <section class="max-w-5xl mx-auto py-24 px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-8">Why People Trust AmicBridge</h2>
-    <ul class="space-y-6 text-lg text-gray-700">
-      <li>🤝 Verified, one-to-one introductions to genuine lenders and borrowers</li>
-      <li>🔒 Private and encrypted communication channels</li>
-      <li>🌍 A growing network of real, verified members worldwide</li>
-      <li>🧩 Simple, transparent access — one fee, lifetime membership</li>
-      <li>👥 Dedicated human support every step of the way</li>
-    </ul>
-  </section>
-
-  <section class="bg-blue-950 text-white py-20 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">Our Promise</h2>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        Every AmicBridge member is verified before access is granted.  
-        Payments are confirmed manually to ensure safety and transparency.  
-        You’re not sending money into a system — you’re joining a verified network built on trust.
-      </p>
-    </div>
-  </section>
-</Layout>
+  </body>
+</html>
