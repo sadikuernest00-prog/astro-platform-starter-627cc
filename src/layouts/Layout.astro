@@ -1,29 +1,7 @@
----
-import '../styles/globals.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
-interface Props {
-  title?: string;
-}
-const { title = 'AmicBridge' } = Astro.props;
----
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <link rel="icon" href="/favicon.svg" />
-  </head>
-  <body class="antialiased min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 text-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <Header />
-      <main class="py-10">
-        <slot />
-      </main>
-      <Footer />
-    </div>
-  </body>
-</html>
+<a
+  href="https://wa.me/4792928373?text=Hi%20AmicBridge%2C%20I%20want%20to%20make%20my%20payment%20and%20get%20access%20to%20the%20private%20network."
+  target="_blank"
+  class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-xl font-semibold shadow-md hover:shadow-lg transition transform hover:scale-105"
+>
+  Pay Now
+</a>
